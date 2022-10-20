@@ -13,7 +13,7 @@ class Vuelo:
             "Peso: " + str(self.__peso) + "\n" 
         )
 
-vuelo1 = Vuelo(id="0", origen="TORREON", destino="CDMX", peso=30)
-print(vuelo1) #Direccion de memoria del obejto
-vuelo2 = Vuelo(id="1", origen="CDMX", destino="MTY", peso=30)
-print(vuelo2) 
+# vuelo1 = Vuelo(id="0", origen="TORREON", destino="CDMX", peso=30)
+# print(vuelo1) #Direccion de memoria del obejto
+# vuelo2 = Vuelo(id="1", origen="CDMX", destino="MTY", peso=30)
+# print(vuelo2) 
