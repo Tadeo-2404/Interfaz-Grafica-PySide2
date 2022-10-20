@@ -17,87 +17,116 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(225, 307)
+        MainWindow.resize(535, 383)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.groupBox = QGroupBox(self.centralwidget)
-        self.groupBox.setObjectName(u"groupBox")
-        self.groupBox.setGeometry(QRect(10, 10, 211, 251))
-        self.groupBox.setStyleSheet(u"border-color: rgb(0, 0, 0);\n"
+        self.gridLayout_2 = QGridLayout(self.centralwidget)
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.BoxContainer = QGroupBox(self.centralwidget)
+        self.BoxContainer.setObjectName(u"BoxContainer")
+        self.BoxContainer.setStyleSheet(u"border-color: rgb(0, 0, 0);\n"
 "background-color: rgb(189, 183, 181);\n"
 "color: rgb(255, 255, 255);\n"
 "padding: 2px;")
-        self.gridLayout = QGridLayout(self.groupBox)
+        self.gridLayout = QGridLayout(self.BoxContainer)
         self.gridLayout.setObjectName(u"gridLayout")
-        self.label_8 = QLabel(self.groupBox)
-        self.label_8.setObjectName(u"label_8")
+        self.inputBox_peso = QSpinBox(self.BoxContainer)
+        self.inputBox_peso.setObjectName(u"inputBox_peso")
+        self.inputBox_peso.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+"color: rgb(0, 0, 0);\n"
+"padding: 1px;")
 
-        self.gridLayout.addWidget(self.label_8, 1, 0, 1, 1)
+        self.gridLayout.addWidget(self.inputBox_peso, 2, 1, 1, 1)
 
-        self.label_6 = QLabel(self.groupBox)
-        self.label_6.setObjectName(u"label_6")
-
-        self.gridLayout.addWidget(self.label_6, 3, 0, 1, 1)
-
-        self.pushButton_2 = QPushButton(self.groupBox)
-        self.pushButton_2.setObjectName(u"pushButton_2")
-        self.pushButton_2.setStyleSheet(u"outline: none;\n"
+        self.mostrarBtn = QPushButton(self.BoxContainer)
+        self.mostrarBtn.setObjectName(u"mostrarBtn")
+        self.mostrarBtn.setStyleSheet(u"outline: none;\n"
 "border: none;\n"
 "background-color: rgb(0, 0, 255);\n"
 "height: 25px;\n"
 "text-transform:uppercase;")
 
-        self.gridLayout.addWidget(self.pushButton_2, 4, 0, 1, 2)
+        self.gridLayout.addWidget(self.mostrarBtn, 6, 0, 1, 2)
 
-        self.label_5 = QLabel(self.groupBox)
-        self.label_5.setObjectName(u"label_5")
+        self.agregarInicioBtn = QPushButton(self.BoxContainer)
+        self.agregarInicioBtn.setObjectName(u"agregarInicioBtn")
+        self.agregarInicioBtn.setStyleSheet(u"outline: none;\n"
+"border: none;\n"
+"background-color: rgb(0, 0, 255);\n"
+"height: 25px;\n"
+"text-transform:uppercase;")
 
-        self.gridLayout.addWidget(self.label_5, 0, 0, 1, 1)
+        self.gridLayout.addWidget(self.agregarInicioBtn, 5, 0, 1, 2)
 
-        self.label_7 = QLabel(self.groupBox)
-        self.label_7.setObjectName(u"label_7")
-
-        self.gridLayout.addWidget(self.label_7, 2, 0, 1, 1)
-
-        self.spinBox_2 = QSpinBox(self.groupBox)
-        self.spinBox_2.setObjectName(u"spinBox_2")
-        self.spinBox_2.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
-"color: rgb(0, 0, 0);\n"
-"padding: 1px;")
-
-        self.gridLayout.addWidget(self.spinBox_2, 2, 1, 1, 1)
-
-        self.lineEdit_4 = QLineEdit(self.groupBox)
-        self.lineEdit_4.setObjectName(u"lineEdit_4")
-        self.lineEdit_4.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+        self.input_id = QLineEdit(self.BoxContainer)
+        self.input_id.setObjectName(u"input_id")
+        self.input_id.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "border: none;\n"
 "color: rgb(0, 0, 0);\n"
 "padding: 1px;")
 
-        self.gridLayout.addWidget(self.lineEdit_4, 1, 1, 1, 1)
+        self.gridLayout.addWidget(self.input_id, 0, 1, 1, 1)
 
-        self.lineEdit_6 = QLineEdit(self.groupBox)
-        self.lineEdit_6.setObjectName(u"lineEdit_6")
-        self.lineEdit_6.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+        self.label_peso = QLabel(self.BoxContainer)
+        self.label_peso.setObjectName(u"label_peso")
+
+        self.gridLayout.addWidget(self.label_peso, 2, 0, 1, 1)
+
+        self.label_destino = QLabel(self.BoxContainer)
+        self.label_destino.setObjectName(u"label_destino")
+
+        self.gridLayout.addWidget(self.label_destino, 3, 0, 1, 1)
+
+        self.label_origen = QLabel(self.BoxContainer)
+        self.label_origen.setObjectName(u"label_origen")
+
+        self.gridLayout.addWidget(self.label_origen, 1, 0, 1, 1)
+
+        self.input_origen = QLineEdit(self.BoxContainer)
+        self.input_origen.setObjectName(u"input_origen")
+        self.input_origen.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "border: none;\n"
 "color: rgb(0, 0, 0);\n"
 "padding: 1px;")
 
-        self.gridLayout.addWidget(self.lineEdit_6, 3, 1, 1, 1)
+        self.gridLayout.addWidget(self.input_origen, 1, 1, 1, 1)
 
-        self.lineEdit_5 = QLineEdit(self.groupBox)
-        self.lineEdit_5.setObjectName(u"lineEdit_5")
-        self.lineEdit_5.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+        self.input_destino = QLineEdit(self.BoxContainer)
+        self.input_destino.setObjectName(u"input_destino")
+        self.input_destino.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "border: none;\n"
 "color: rgb(0, 0, 0);\n"
 "padding: 1px;")
 
-        self.gridLayout.addWidget(self.lineEdit_5, 0, 1, 1, 1)
+        self.gridLayout.addWidget(self.input_destino, 3, 1, 1, 1)
+
+        self.agregarFinalBtn = QPushButton(self.BoxContainer)
+        self.agregarFinalBtn.setObjectName(u"agregarFinalBtn")
+        self.agregarFinalBtn.setStyleSheet(u"outline: none;\n"
+"border: none;\n"
+"background-color: rgb(0, 0, 255);\n"
+"height: 25px;\n"
+"text-transform:uppercase;")
+
+        self.gridLayout.addWidget(self.agregarFinalBtn, 4, 0, 1, 2)
+
+        self.label_id = QLabel(self.BoxContainer)
+        self.label_id.setObjectName(u"label_id")
+
+        self.gridLayout.addWidget(self.label_id, 0, 0, 1, 1)
+
+
+        self.gridLayout_2.addWidget(self.BoxContainer, 0, 0, 1, 1)
+
+        self.plainTextEdit = QPlainTextEdit(self.centralwidget)
+        self.plainTextEdit.setObjectName(u"plainTextEdit")
+
+        self.gridLayout_2.addWidget(self.plainTextEdit, 0, 1, 1, 1)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 225, 22))
+        self.menubar.setGeometry(QRect(0, 0, 535, 22))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -110,11 +139,13 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Vuelo", None))
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"Origen:", None))
-        self.label_6.setText(QCoreApplication.translate("MainWindow", u"Destino", None))
-        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Agregar", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"ID:", None))
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Peso:", None))
+        self.BoxContainer.setTitle(QCoreApplication.translate("MainWindow", u"Vuelo", None))
+        self.mostrarBtn.setText(QCoreApplication.translate("MainWindow", u"Mostrar", None))
+        self.agregarInicioBtn.setText(QCoreApplication.translate("MainWindow", u"Agregar inicio", None))
+        self.label_peso.setText(QCoreApplication.translate("MainWindow", u"Peso:", None))
+        self.label_destino.setText(QCoreApplication.translate("MainWindow", u"Destino", None))
+        self.label_origen.setText(QCoreApplication.translate("MainWindow", u"Origen:", None))
+        self.agregarFinalBtn.setText(QCoreApplication.translate("MainWindow", u"Agregar final", None))
+        self.label_id.setText(QCoreApplication.translate("MainWindow", u"ID:", None))
     # retranslateUi
 

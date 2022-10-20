@@ -1,7 +1,8 @@
-from PySide2.QtWidgets import QPushButton, QApplication
+from PySide2.QtWidgets import QApplication
+from mainwindow import MainWindow
 import sys
 
 app = QApplication()
-button = QPushButton('Hola')
-button.show()
+window = MainWindow()
+window.show()
 sys.exit(app.exec_())
