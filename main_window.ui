@@ -6,141 +6,253 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>464</width>
-    <height>350</height>
+    <width>534</width>
+    <height>372</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout_2">
+   <layout class="QGridLayout" name="gridLayout_3">
     <item row="0" column="0">
-     <widget class="QGroupBox" name="BoxContainer">
+     <widget class="QTabWidget" name="tabla_container">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
       <property name="styleSheet">
-       <string notr="true">border-color: rgb(0, 0, 0);
-background-color: rgb(189, 183, 181);
+       <string notr="true">background-color: rgb(228, 229, 232);
+padding: 5px;</string>
+      </property>
+      <property name="tabPosition">
+       <enum>QTabWidget::North</enum>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>16</height>
+       </size>
+      </property>
+      <property name="tabsClosable">
+       <bool>false</bool>
+      </property>
+      <property name="tabBarAutoHide">
+       <bool>false</bool>
+      </property>
+      <widget class="QWidget" name="agregar_tab">
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <attribute name="title">
+        <string>Agregar</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="BoxContainer">
+          <property name="styleSheet">
+           <string notr="true">border-color: rgb(0, 0, 0);
+background-color: rgb(115, 171, 255);
 color: rgb(255, 255, 255);
 padding: 2px;</string>
-      </property>
-      <property name="title">
-       <string>Vuelo</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout">
-       <item row="2" column="1">
-        <widget class="QSpinBox" name="inputBox_peso">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(255, 255, 255);
+          </property>
+          <property name="title">
+           <string>Vuelo</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout">
+           <item row="2" column="1">
+            <widget class="QSpinBox" name="inputBox_peso">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
 color: rgb(0, 0, 0);
 padding: 1px;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="0" colspan="2">
-        <widget class="QPushButton" name="mostrarBtn">
-         <property name="styleSheet">
-          <string notr="true">outline: none;
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0" colspan="2">
+            <widget class="QPushButton" name="mostrarBtn">
+             <property name="styleSheet">
+              <string notr="true">outline: none;
 border: none;
 background-color: rgb(0, 0, 255);
 height: 25px;
 text-transform:uppercase;</string>
-         </property>
-         <property name="text">
-          <string>Mostrar</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0" colspan="2">
-        <widget class="QPushButton" name="agregarInicioBtn">
-         <property name="styleSheet">
-          <string notr="true">outline: none;
+             </property>
+             <property name="text">
+              <string>Mostrar</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0" colspan="2">
+            <widget class="QPushButton" name="agregarInicioBtn">
+             <property name="styleSheet">
+              <string notr="true">outline: none;
 border: none;
 background-color: rgb(0, 0, 255);
 height: 25px;
 text-transform:uppercase;</string>
-         </property>
-         <property name="text">
-          <string>Agregar inicio</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLineEdit" name="input_id">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(255, 255, 255);
+             </property>
+             <property name="text">
+              <string>Agregar inicio</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="input_id">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
 border: none;
 color: rgb(0, 0, 0);
 padding: 1px;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="label_peso">
-         <property name="text">
-          <string>Peso:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="label_destino">
-         <property name="text">
-          <string>Destino</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="label_origen">
-         <property name="text">
-          <string>Origen:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QLineEdit" name="input_origen">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(255, 255, 255);
+             </property>
+             <property name="placeholderText">
+              <string>ID del Vuelo</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_peso">
+             <property name="text">
+              <string>Peso:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_destino">
+             <property name="text">
+              <string>Destino</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_origen">
+             <property name="text">
+              <string>Origen:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="input_origen">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
 border: none;
 color: rgb(0, 0, 0);
-padding: 1px;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QLineEdit" name="input_destino">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(255, 255, 255);
+padding: 1px;
+</string>
+             </property>
+             <property name="placeholderText">
+              <string>Origen del Vuelo</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLineEdit" name="input_destino">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
 border: none;
 color: rgb(0, 0, 0);
-padding: 1px;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0" colspan="2">
-        <widget class="QPushButton" name="agregarFinalBtn">
-         <property name="styleSheet">
-          <string notr="true">outline: none;
+padding: 1px;
+</string>
+             </property>
+             <property name="placeholderText">
+              <string>Destino del Vuelo</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0" colspan="2">
+            <widget class="QPushButton" name="agregarFinalBtn">
+             <property name="styleSheet">
+              <string notr="true">outline: none;
 border: none;
 background-color: rgb(0, 0, 255);
 height: 25px;
 text-transform:uppercase;</string>
-         </property>
-         <property name="text">
-          <string>Agregar final</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="label_id">
-         <property name="text">
-          <string>ID:</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
+             </property>
+             <property name="text">
+              <string>Agregar final</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_id">
+             <property name="text">
+              <string>ID:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QPlainTextEdit" name="plainTextEdit">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabla_tab">
+       <attribute name="title">
+        <string>Tabla</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="0" column="0" colspan="3">
+         <widget class="QTableWidget" name="tabla">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLineEdit" name="tabla_input">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="placeholderText">
+           <string>Titulo del Vuelo</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QPushButton" name="tabla_buscarBtn">
+          <property name="styleSheet">
+           <string notr="true">outline: none;
+border: none;
+background-color: rgb(0, 0, 255);
+text-transform:uppercase;
+color: white;</string>
+          </property>
+          <property name="text">
+           <string>Buscar</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QPushButton" name="tabla_mostrarBtn">
+          <property name="styleSheet">
+           <string notr="true">outline: none;
+border: none;
+background-color: rgb(0, 0, 255);
+text-transform:uppercase;
+color: white;</string>
+          </property>
+          <property name="text">
+           <string>Mostrar</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
      </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QPlainTextEdit" name="plainTextEdit"/>
     </item>
    </layout>
   </widget>
@@ -149,7 +261,7 @@ text-transform:uppercase;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>464</width>
+     <width>534</width>
      <height>22</height>
     </rect>
    </property>

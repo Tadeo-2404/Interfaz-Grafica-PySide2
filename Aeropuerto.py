@@ -1,3 +1,4 @@
+from time import sleep
 from Vuelo import Vuelo
 import json
 
@@ -19,6 +20,21 @@ class Aeropuerto:
         return "".join(
             str(vuelo) + "\n" for vuelo in self.__vuelos
         )
+
+    def __len__(self):
+        return len(self.__vuelos)
+
+    def __iter__(self):
+        self.cont = 0
+        return self
+
+    def __next__(self):
+        if self.cont < len(self.__vuelos):
+            vuelo = self.__vuelos[self.cont]
+            self.cont += 1
+            return vuelo
+        else:
+            raise StopIteration
 
     def guardarArchivo(self, ubicacion):
         try:

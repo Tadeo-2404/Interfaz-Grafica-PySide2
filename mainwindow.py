@@ -1,4 +1,4 @@
-from PySide2.QtWidgets import QMainWindow, QFileDialog, QMessageBox
+from PySide2.QtWidgets import QMainWindow, QFileDialog, QMessageBox, QTableWidgetItem
 from PySide2.QtCore import Slot
 from ui_mainWindow import Ui_MainWindow
 from Aeropuerto import Aeropuerto
@@ -16,6 +16,56 @@ class MainWindow(QMainWindow):
 
         self.ui.actionAbrir.triggered.connect(self.abrirArchivo)
         self.ui.actionGuardar.triggered.connect(self.guardarArchivo)
+
+        self.ui.tabla_mostrarBtn.clicked.connect(self.tablaMostrar)
+        self.ui.tabla_buscarBtn.clicked.connect(self.tablaBuscar)
+
+    @Slot()
+    def tablaBuscar(self):
+        id = self.ui.tabla_input.text()
+        encontrado = False
+        for vuelo in self.aeropuerto:
+            if(id == vuelo.getID):
+                self.ui.tabla.clear()
+                id_widget = QTableWidgetItem(vuelo.getID)
+                origen_widget = QTableWidgetItem(vuelo.getOrigen)
+                destino_widget = QTableWidgetItem(vuelo.getDestino)
+                peso_widget = QTableWidgetItem(str(vuelo.getPeso))
+
+                self.ui.tabla.setItem(0, 0, id_widget)
+                self.ui.tabla.setItem(0, 1, origen_widget)
+                self.ui.tabla.setItem(0, 2, destino_widget)
+                self.ui.tabla.setItem(0, 3, peso_widget)
+
+                encontrado = True
+                return
+        if(not encontrado):
+            QMessageBox.warning(
+                self,
+                "Advertencia",
+                f'El vuelo con el ID "{id}" no fue encontrado',
+            )
+
+    @Slot()
+    def tablaMostrar(self):
+        self.ui.tabla.setColumnCount(4)
+        headers = ["ID", "Origen", "Destino", "Peso"]
+        self.ui.tabla.setHorizontalHeaderLabels(headers)
+        self.ui.tabla.setRowCount(len(self.aeropuerto))
+
+        row = 0
+        for vuelo in self.aeropuerto:
+            id = QTableWidgetItem(vuelo.getID)
+            origen = QTableWidgetItem(vuelo.getOrigen)
+            destino = QTableWidgetItem(vuelo.getDestino)
+            peso = QTableWidgetItem(str(vuelo.getPeso))
+
+            self.ui.tabla.setItem(row, 0, id)
+            self.ui.tabla.setItem(row, 1, origen)
+            self.ui.tabla.setItem(row, 2, destino)
+            self.ui.tabla.setItem(row, 3, peso)
+            row += 1
+
 
     @Slot()
     def abrirArchivo(self):
@@ -56,7 +106,6 @@ class MainWindow(QMainWindow):
             "Fracaso", 
             "No se pudo crear " + ubicacion
         )
-
 
     @Slot()
     def agregarInicio(self) :
