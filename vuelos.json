@@ -1,0 +1,20 @@
+[
+     {
+          "ID: ": "1",
+          "Origen: ": "GDL",
+          "Destino: ": "CDMX",
+          "Peso: ": 10
+     },
+     {
+          "ID: ": "2",
+          "Origen: ": "MTY",
+          "Destino: ": "CDMX",
+          "Peso: ": 20
+     },
+     {
+          "ID: ": "3",
+          "Origen: ": "TORREON",
+          "Destino: ": "CDMX",
+          "Peso: ": 60
+     }
+]

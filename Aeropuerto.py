@@ -1,4 +1,5 @@
 from Vuelo import Vuelo
+import json
 
 class Aeropuerto:
     def __init__(self):
@@ -18,6 +19,25 @@ class Aeropuerto:
         return "".join(
             str(vuelo) + "\n" for vuelo in self.__vuelos
         )
+
+    def guardarArchivo(self, ubicacion):
+        try:
+            with open(ubicacion, "w") as archivo:
+              lista = [vuelo.convertirADiccionario() for vuelo in self.__vuelos]
+              json.dump(lista, archivo, indent=5)
+            return 1
+        except:
+            return 0
+
+    def abrirArchivo(self, ubicacion):
+        try:
+            with open(ubicacion, "r") as archivo:
+              lista = json.load(archivo)
+              self.__vuelos = [Vuelo(**vuelo) for vuelo in lista]
+            return 1
+        except:
+            return 0
+
 
 # vuelo1 = Vuelo(id="0", origen="TORREON", destino="CDMX", peso=30)
 # vuelo2 = Vuelo(id="1", origen="CDMX", destino="MTY", peso=30)
