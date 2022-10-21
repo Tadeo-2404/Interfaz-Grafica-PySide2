@@ -13,6 +13,14 @@ class Vuelo:
             "Peso: " + str(self.__peso) + "\n" 
         )
 
+    def convertirADiccionario(self):
+        return {
+            "ID: ":  self.__id,
+            "Origen: ":  self.__origen,
+            "Destino: ": self.__destino,
+            "Peso: ": self.__peso,
+        }
+
 # vuelo1 = Vuelo(id="0", origen="TORREON", destino="CDMX", peso=30)
 # print(vuelo1) #Direccion de memoria del obejto
 # vuelo2 = Vuelo(id="1", origen="CDMX", destino="MTY", peso=30)

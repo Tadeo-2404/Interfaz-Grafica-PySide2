@@ -1,4 +1,4 @@
-from PySide2.QtWidgets import QMainWindow
+from PySide2.QtWidgets import QMainWindow, QFileDialog, QMessageBox
 from PySide2.QtCore import Slot
 from ui_mainWindow import Ui_MainWindow
 from Aeropuerto import Aeropuerto
@@ -13,6 +13,50 @@ class MainWindow(QMainWindow):
         self.ui.agregarInicioBtn.clicked.connect(self.agregarInicio)
         self.ui.agregarFinalBtn.clicked.connect(self.agregarFinal)
         self.ui.mostrarBtn.clicked.connect(self.mostrar)
+
+        self.ui.actionAbrir.triggered.connect(self.abrirArchivo)
+        self.ui.actionGuardar.triggered.connect(self.guardarArchivo)
+
+    @Slot()
+    def abrirArchivo(self):
+        ubicacion = QFileDialog.getOpenFileName(
+            self,
+            'Abrir Archivo',
+            '.',
+            'JSON (*.json)',
+        )[0]
+        if self.aeropuerto.abrirArchivo(ubicacion):
+            QMessageBox.accept(
+                self,
+                "Exito",
+                "Se ha abierto exitosamente " + ubicacion
+            ) 
+        else: QMessageBox.critical(
+            self,
+            "Fracaso", 
+            "No se pudo abrir " + ubicacion
+        )
+
+    @Slot()
+    def guardarArchivo(self):
+        ubicacion = QFileDialog.getSaveFileName(
+            self,
+            'Guardar Archivo',
+            '.',
+            'JSON (*.json)',
+        )[0]
+        if self.aeropuerto.guardarArchivo(ubicacion):
+            QMessageBox.accept(
+                self,
+                "Exito",
+                "Se ha creado exitosamente " + ubicacion
+            ) 
+        else: QMessageBox.critical(
+            self,
+            "Fracaso", 
+            "No se pudo crear " + ubicacion
+        )
+
 
     @Slot()
     def agregarInicio(self) :
