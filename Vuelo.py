@@ -13,6 +13,22 @@ class Vuelo:
             "Peso: " + str(self.__peso) + "\n" 
         )
 
+    @property
+    def getID(self):
+        return self.__id
+
+    @property
+    def getOrigen(self):
+        return self.__origen
+
+    @property
+    def getDestino(self):
+        return self.__destino
+
+    @property
+    def getPeso(self):
+        return self.__peso
+
     def convertirADiccionario(self):
         return {
             "ID: ":  self.__id,
